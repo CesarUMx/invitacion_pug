@@ -1,0 +1,27 @@
+:root {
+  /* Cielo nocturno */
+  --night-deep: #07051A;
+  --night: #0D0B2A;
+
+  /* Morados */
+  --purple-deep: #2D0A4E;
+  --purple-main: #7C3AED;
+  --purple-light: #C4A0F5;
+
+  /* Dorados */
+  --gold: #F5C842;
+  --gold-dark: #C8960A;
+
+  /* Acentos */
+  --pink: #F9A8D4;
+  --cream: #F8F0DC;
+  --parchment: #EDE0C4;
+
+  /* Texto */
+  --text-dark: #2C1A4E;
+
+  /* Tipografías */
+  --font-title: 'Cinzel Decorative', serif;
+  --font-elegant: 'Cormorant Garamond', serif;
+  --font-body: 'Lato', sans-serif;
+}

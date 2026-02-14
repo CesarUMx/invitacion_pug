@@ -1,0 +1,117 @@
+/* ===== Sección — pantalla completa con fondo pergamino ===== */
+.section {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  height: 100dvh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===== Contenido ===== */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(16px, 3vh, 28px);
+  padding: clamp(20px, 4vh, 40px) clamp(20px, 5vw, 40px);
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Stagger */
+.content > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition-delay: calc(0.2s + var(--i, 0) * 0.2s);
+}
+
+.contentVisible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Corona ===== */
+.crown {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  filter: drop-shadow(0 0 12px rgba(245, 200, 66, 0.5));
+  animation: crownFloat 3s ease-in-out infinite;
+}
+
+/* ===== Título ===== */
+.title {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--gold-dark);
+  text-shadow: 0 2px 6px rgba(200, 150, 10, 0.3);
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+/* ===== Subtítulo ===== */
+.subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 3.2vw, 1.15rem);
+  color: var(--purple-deep);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Botón WhatsApp ===== */
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(12px, 2.5vh, 16px) clamp(24px, 6vw, 36px);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border-radius: 30px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.whatsappBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsappBtn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(37, 211, 102, 0.5);
+}
+
+/* ===== Nota ===== */
+.note {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+  color: var(--purple-deep);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Keyframes ===== */
+@keyframes crownFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 768px) {
+  .content {
+    gap: clamp(20px, 4vh, 36px);
+  }
+}

@@ -1,0 +1,164 @@
+/* ===== Carrusel de páginas — pantalla completa ===== */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+/* ===== Cada página ===== */
+.page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  backface-visibility: hidden;
+}
+
+/* Página activa (visible) */
+.pageActive {
+  transform: translateX(0) rotateY(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Página actual saliendo hacia la izquierda (next) */
+.pageExitLeft {
+  animation: flipOutLeft 0.6s ease-in-out forwards;
+  z-index: 2;
+}
+
+/* Página actual saliendo hacia la derecha (prev) */
+.pageExitRight {
+  animation: flipOutRight 0.6s ease-in-out forwards;
+  z-index: 2;
+}
+
+/* Página nueva entrando desde la derecha (next) */
+.pageEnterRight {
+  animation: flipInRight 0.6s ease-in-out forwards;
+  z-index: 1;
+}
+
+/* Página nueva entrando desde la izquierda (prev) */
+.pageEnterLeft {
+  animation: flipInLeft 0.6s ease-in-out forwards;
+  z-index: 1;
+}
+
+/* ===== Keyframes — efecto pasar hoja ===== */
+@keyframes flipOutLeft {
+  0% {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-30%) rotateY(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipOutRight {
+  0% {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30%) rotateY(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipInRight {
+  0% {
+    transform: translateX(30%) rotateY(-15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInLeft {
+  0% {
+    transform: translateX(-30%) rotateY(15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== Indicadores de página (dots) ===== */
+.dots {
+  position: absolute;
+  bottom: clamp(12px, 2.5vh, 24px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(196, 160, 245, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dotActive {
+  background: var(--gold);
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(245, 200, 66, 0.5);
+}
+
+/* ===== Flechas de navegación ===== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: clamp(36px, 8vw, 48px);
+  height: clamp(36px, 8vw, 48px);
+  border-radius: 50%;
+  background: rgba(45, 10, 78, 0.5);
+  backdrop-filter: blur(4px);
+  color: var(--gold);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(245, 200, 66, 0.2);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.arrow:active {
+  background: rgba(45, 10, 78, 0.8);
+  border-color: var(--gold);
+}
+
+.arrowLeft {
+  left: clamp(8px, 2vw, 16px);
+}
+
+.arrowRight {
+  right: clamp(8px, 2vw, 16px);
+}
+
+/* En móvil, flechas más discretas */
+@media (max-width: 480px) {
+  .arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+}

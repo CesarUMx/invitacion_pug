@@ -1,0 +1,174 @@
+/* ===== Sección — pantalla completa con fondo ===== */
+.section {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  height: 100dvh;
+  gap: clamp(24px, 5vh, 48px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay oscuro para contraste sobre fondo.png */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 5, 26, 0.65) 0%,
+    rgba(45, 10, 78, 0.55) 50%,
+    rgba(7, 5, 26, 0.7) 100%
+  );
+}
+
+/* ===== Título ===== */
+.title {
+  position: relative;
+  z-index: 3;
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--gold);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.titleVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Contenedor de bloques ===== */
+.blocks {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+/* Stagger de bloques */
+.blocks .blockWrapper {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: calc(0.3s + var(--i, 0) * 0.15s);
+  display: flex;
+  align-items: center;
+}
+
+.blocksVisible .blockWrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Separador ✦ ===== */
+.separator {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: var(--gold);
+  margin: 0 clamp(4px, 1.5vw, 12px);
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* ===== Bloque individual ===== */
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(60px, 18vw, 90px);
+  height: clamp(75px, 22vw, 110px);
+  background: linear-gradient(
+    135deg,
+    rgba(248, 240, 220, 0.25) 0%,
+    rgba(237, 224, 196, 0.18) 100%
+  );
+  border: 1px solid rgba(245, 200, 66, 0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ===== Número ===== */
+.number {
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  color: var(--gold);
+  text-shadow: 0 0 15px rgba(245, 200, 66, 0.4);
+  line-height: 1;
+  display: inline-block;
+  perspective: 300px;
+}
+
+.numberFlip {
+  animation: flip 0.5s ease-in-out;
+}
+
+/* ===== Label ===== */
+.label {
+  font-family: var(--font-body);
+  font-size: clamp(0.6rem, 2vw, 0.75rem);
+  color: var(--purple-light);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 4px;
+}
+
+/* ===== Expired ===== */
+.expired {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.expiredText {
+  font-family: var(--font-title);
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(245, 200, 66, 0.5);
+}
+
+/* ===== Keyframes ===== */
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(245, 200, 66, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 18px 6px rgba(245, 200, 66, 0.3);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 359px) {
+  .block {
+    width: 55px;
+    height: 68px;
+  }
+  .number { font-size: 1.5rem; }
+}

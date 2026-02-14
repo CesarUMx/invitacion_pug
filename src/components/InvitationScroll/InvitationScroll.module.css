@@ -1,0 +1,100 @@
+/* ===== Sección contenedora — pantalla completa con fondo pergamino ===== */
+.section {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  height: 100dvh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===== Contenido de texto centrado en el pergamino ===== */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: clamp(8px, 2vh, 16px);
+  padding: clamp(20px, 5vh, 60px) clamp(40px, 12vw, 100px);
+  max-width: 500px;
+}
+
+/* Stagger de cada hijo */
+.content > * {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: calc(0.6s + var(--i, 0) * 0.2s);
+}
+
+.contentVisible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Textos ===== */
+.sparkle {
+  font-family: var(--font-elegant);
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  color: var(--purple-main);
+  letter-spacing: 0.05em;
+}
+
+.quote {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  color: var(--purple-deep);
+  line-height: 1.4;
+}
+
+.name {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  color: var(--gold-dark);
+  text-shadow: 0 1px 4px rgba(200, 150, 10, 0.3);
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.line {
+  font-family: var(--font-elegant);
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  color: var(--text-dark);
+}
+
+.body {
+  font-family: var(--font-elegant);
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.parents {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  color: var(--gold-dark);
+  line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(200, 150, 10, 0.2);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 379px) {
+  .content {
+    top: 16%;
+    left: 18%;
+    right: 16%;
+    gap: 4px;
+  }
+  .name { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+}
+
+@media (min-width: 768px) {
+  .scroll { max-width: 520px; }
+}

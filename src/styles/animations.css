@@ -1,0 +1,52 @@
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes goldenShimmer {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+  100% { filter: brightness(1); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(245, 200, 66, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(245, 200, 66, 0.6); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes windowGlow {
+  0%, 100% { box-shadow: inset 0 0 30px rgba(245, 200, 66, 0.2); }
+  50% { box-shadow: inset 0 0 60px rgba(245, 200, 66, 0.5); }
+}
+
+@keyframes btnPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(245, 200, 66, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(245, 200, 66, 0.7);
+    transform: scale(1.03);
+  }
+}
