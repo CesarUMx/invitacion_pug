@@ -123,6 +123,25 @@
   margin-top: 4px;
 }
 
+/* ===== Texto "Ya estas listo" ===== */
+.readyText {
+  position: relative;
+  z-index: 3;
+  font-family: var(--font-elegant);
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  color: var(--gold);
+  text-shadow: 0 2px 10px rgba(245, 200, 66, 0.4);
+  margin-top: clamp(16px, 3vh, 24px);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.8s ease-out 1s, transform 0.8s ease-out 1s;
+}
+
+.readyTextVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ===== Expired ===== */
 .expired {
   position: relative;

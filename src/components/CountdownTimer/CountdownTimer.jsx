@@ -74,6 +74,10 @@ export default function CountdownTimer({ active }) {
           </div>
         ))}
       </div>
+
+      <p className={`${s.readyText} ${visible ? s.readyTextVisible : ''}`}>
+        ¿Ya estas listo?
+      </p>
     </section>
   );
 }
