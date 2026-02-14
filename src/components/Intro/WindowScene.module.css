@@ -193,7 +193,58 @@
   animation: sceneOut 1s ease-in forwards;
 }
 
+/* ===== Overlay del botón de inicio ===== */
+.startOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 5, 32, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+/* ===== Botón de inicio ===== */
+.startButton {
+  padding: clamp(16px, 3vh, 24px) clamp(40px, 10vw, 60px);
+  font-family: var(--font-title);
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--purple-deep);
+  background: linear-gradient(135deg, #f8f0dc 0%, #e8dcc0 100%);
+  border: 3px solid var(--gold);
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(245, 200, 66, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  animation: buttonPulse 2s ease-in-out infinite;
+}
+
+.startButton:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(245, 200, 66, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  border-color: var(--gold-dark);
+  background: linear-gradient(135deg, #fffaed 0%, #f0e6ce 100%);
+}
+
+.startButton:active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 15px rgba(245, 200, 66, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
 /* ===== Keyframes ===== */
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(245, 200, 66, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(245, 200, 66, 0.7), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
 @keyframes sceneOut {
   to { opacity: 0; }
 }

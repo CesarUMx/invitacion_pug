@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { IMAGES } from '../../utils/constants';
+import { IMAGES, SOUNDS } from '../../utils/constants';
 import s from './WindowScene.module.css';
 
 function generateStars(count, bright = false) {
@@ -58,8 +58,10 @@ export default function WindowScene({ onComplete }) {
   const [exiting, setExiting] = useState(false);
   const [zoomStyle, setZoomStyle] = useState({});
   const [rapPos, setRapPos] = useState(null);
+  const [audioStarted, setAudioStarted] = useState(false);
   const containerRef = useRef(null);
   const towerImgRef = useRef(null);
+  const audioRef = useRef(null);
 
   const stars = useMemo(() => [
     ...generateStars(120),
@@ -84,14 +86,52 @@ export default function WindowScene({ onComplete }) {
     });
   }, []);
 
+  // Intentar reproducir audio automáticamente al cargar
   useEffect(() => {
+    const tryAutoplay = async () => {
+      if (audioRef.current) {
+        try {
+          await audioRef.current.play();
+          setAudioStarted(true); // Si funciona, marcar como iniciado
+        } catch (err) {
+          // Si falla el autoplay, el botón permanecerá visible
+          console.log('Autoplay bloqueado - mostrando botón:', err);
+        }
+      }
+    };
+    
+    // Intentar después de un pequeño delay
+    const timer = setTimeout(tryAutoplay, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Iniciar audio y animación cuando el usuario hace clic en "Iniciar"
+  const handleStart = useCallback(() => {
+    setAudioStarted(true);
+    if (audioRef.current) {
+      audioRef.current.play().catch(err => {
+        console.log('Audio play error:', err);
+      });
+    }
+  }, []);
+
+  // Detener audio cuando se sale del intro
+  useEffect(() => {
+    if (exiting && audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [exiting]);
+
+  useEffect(() => {
+    if (!audioStarted) return;
     const timers = [
       setTimeout(() => setStep(1), 600),
       setTimeout(() => setStep(2), 2000),
       setTimeout(() => setStep(3), 3200),
     ];
     return () => timers.forEach(clearTimeout);
-  }, []);
+  }, [audioStarted]);
 
   // Recalcular posición en resize
   useEffect(() => {
@@ -133,6 +173,18 @@ export default function WindowScene({ onComplete }) {
 
   return (
     <div className={`${s.scene} ${exiting ? s.sceneExit : ''}`}>
+      {/* Audio de inicio */}
+      <audio ref={audioRef} src={SOUNDS.intro} loop />
+
+      {/* Botón de inicio */}
+      {!audioStarted && (
+        <div className={s.startOverlay}>
+          <button onClick={handleStart} className={s.startButton}>
+            ✨ Iniciar Invitación ✨
+          </button>
+        </div>
+      )}
+
       {/* Estrellas */}
       <div className={s.stars}>
         {stars.map((st) => (

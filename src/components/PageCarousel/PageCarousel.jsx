@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, cloneElement, isValidElement } from 'react';
 import s from './PageCarousel.module.css';
 
-export default function PageCarousel({ children }) {
+export default function PageCarousel({ children, onPageChange }) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(null); // 'next' | 'prev'
   const [animating, setAnimating] = useState(false);
@@ -15,10 +15,11 @@ export default function PageCarousel({ children }) {
     setAnimating(true);
     setTimeout(() => {
       setCurrent(index);
+      onPageChange?.(index);
       setAnimating(false);
       setDirection(null);
     }, 600);
-  }, [animating, current, total]);
+  }, [animating, current, total, onPageChange]);
 
   const next = useCallback(() => {
     if (current < total - 1) goTo(current + 1, 'next');

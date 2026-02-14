@@ -50,3 +50,9 @@ export const IMAGES = {
   fondo: '/assets/images/fondo.png',
   cofre: '/assets/images/cofre.png',
 };
+
+export const SOUNDS = {
+  intro: '/assets/sounds/inicio.mp3',
+  hero: '/assets/sounds/2.mp3',
+  celebration: '/assets/sounds/3.mp3',
+};
