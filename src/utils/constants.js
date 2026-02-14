@@ -49,6 +49,7 @@ export const IMAGES = {
   princessDress: '/assets/images/princess-dress.jpg',
   fondo: '/assets/images/fondo.png',
   cofre: '/assets/images/cofre.png',
+  fin: '/assets/images/fin.png',
 };
 
 export const SOUNDS = {

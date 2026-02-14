@@ -18,10 +18,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(16px, 3vh, 28px);
-  padding: clamp(20px, 4vh, 40px) clamp(30px, 8vw, 60px);
+  gap: clamp(12px, 2.5vh, 20px);
+  padding: clamp(20px, 4vh, 40px) clamp(25px, 6vw, 50px);
   width: 100%;
-  max-width: 480px;
+  max-width: 450px;
 }
 
 /* Stagger */
@@ -39,14 +39,14 @@
 
 /* ===== Ícono ===== */
 .icon {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(2rem, 6vw, 3rem);
   filter: drop-shadow(0 0 10px rgba(200, 150, 10, 0.4));
 }
 
 /* ===== Título ===== */
 .title {
   font-family: var(--font-title);
-  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  font-size: clamp(1.4rem, 5vw, 2rem);
   color: var(--gold-dark);
   text-shadow: 0 2px 6px rgba(200, 150, 10, 0.3);
   letter-spacing: 0.08em;
@@ -56,7 +56,7 @@
 .subtitle {
   font-family: var(--font-elegant);
   font-style: italic;
-  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   color: var(--purple-deep);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -64,10 +64,10 @@
 /* ===== Grid de colores ===== */
 .colorsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: clamp(10px, 2vh, 16px);
+  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  gap: clamp(8px, 1.5vh, 12px);
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
 }
 
 /* ===== Tarjeta de color ===== */
@@ -75,11 +75,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(6px, 1vh, 10px);
-  padding: clamp(10px, 2vh, 16px);
+  gap: clamp(4px, 0.8vh, 8px);
+  padding: clamp(8px, 1.5vh, 12px);
   background: rgba(248, 240, 220, 0.3);
   border: 2px solid rgba(200, 150, 10, 0.3);
-  border-radius: 12px;
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
@@ -91,30 +91,31 @@
 
 /* ===== Muestra de color ===== */
 .colorSwatch {
-  width: clamp(50px, 12vw, 70px);
-  height: clamp(50px, 12vw, 70px);
+  width: clamp(40px, 10vw, 55px);
+  height: clamp(40px, 10vw, 55px);
   border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
 /* ===== Nombre del color ===== */
 .colorName {
   font-family: var(--font-body);
-  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+  font-size: clamp(0.7rem, 2.2vw, 0.85rem);
   color: var(--text-dark);
   font-weight: 600;
   letter-spacing: 0.03em;
+  line-height: 1.2;
 }
 
 /* ===== Nota ===== */
 .note {
   font-family: var(--font-elegant);
   font-style: italic;
-  font-size: clamp(0.95rem, 3.2vw, 1.15rem);
+  font-size: clamp(0.85rem, 2.8vw, 1rem);
   color: var(--purple-deep);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  margin-top: clamp(8px, 1.5vh, 12px);
+  margin-top: clamp(4px, 1vh, 8px);
 }
 
 /* ===== Responsive ===== */

@@ -25,7 +25,7 @@ export default function InvitationScroll({ active }) {
         </p>
 
         <p className={s.quote} style={{ '--i': 1 }}>
-          "Como en un nuevo cuento de hadas mis sueños brillan hoy mas que nunca"
+          "Como en un nuevo cuento de hadas, mis sueños brillan hoy más que nunca"
         </p>
 
         <h2 className={s.name} style={{ '--i': 2 }}>
@@ -33,7 +33,7 @@ export default function InvitationScroll({ active }) {
         </h2>
 
         <p className={s.line} style={{ '--i': 3 }}>
-          cumple sus Quince Años
+          Cumple sus Quince Años
         </p>
 
         <p className={s.body} style={{ '--i': 4 }}>

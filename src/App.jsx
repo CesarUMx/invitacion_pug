@@ -87,7 +87,7 @@ function App() {
         <LocationSection
           bgImage={IMAGES.scrollMapSalon}
           icon="🏰"
-          title="Recepción y Fiesta"
+          title="Recepción del Evento"
           hora={EVENT.salon.hora}
           direccion={EVENT.salon.direccion}
           nombre={EVENT.salon.nombre}

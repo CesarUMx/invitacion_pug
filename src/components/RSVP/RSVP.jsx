@@ -30,11 +30,11 @@ export default function RSVP({ active }) {
         <span className={s.crown} style={{ '--i': 0 }}>👑</span>
 
         <h2 className={s.title} style={{ '--i': 1 }}>
-          ¿Nos acompañas esta noche especial?
+          ¿Nos acompañas en esta noche especial?
         </h2>
 
         <p className={s.subtitle} style={{ '--i': 2 }}>
-          Confirma tu asistencia antes del 10 de Abril
+          Confirma tu asistencia antes del 4 de Abril
         </p>
 
         <a
@@ -48,7 +48,7 @@ export default function RSVP({ active }) {
         </a>
 
         <p className={s.note} style={{ '--i': 4 }}>
-          Solo necesitamos tu nombre y cuántos asistirán 🌟
+          Solo necesitamos tu nombre y cuántas personas nos acompañarán 🌟
         </p>
       </div>
     </section>
