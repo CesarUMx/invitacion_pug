@@ -19,9 +19,9 @@
   align-items: center;
   text-align: center;
   gap: clamp(16px, 3vh, 28px);
-  padding: clamp(20px, 4vh, 40px) clamp(20px, 5vw, 40px);
+  padding: clamp(20px, 4vh, 40px) clamp(30px, 8vw, 60px);
   width: 100%;
-  max-width: 550px;
+  max-width: 480px;
 }
 
 /* Stagger */
@@ -64,10 +64,10 @@
 /* ===== Grid de colores ===== */
 .colorsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-  gap: clamp(12px, 2.5vh, 20px);
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: clamp(10px, 2vh, 16px);
   width: 100%;
-  max-width: 450px;
+  max-width: 420px;
 }
 
 /* ===== Tarjeta de color ===== */

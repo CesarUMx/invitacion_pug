@@ -1,33 +1,39 @@
 export const EVENT = {
-  quinceanera: 'Cecilia Patricia Olalde Morales',
-  shortName: 'Cecilia Patricia',
-  date: '17 de Abril de 2026',
+  quinceanera: 'Paola Lissette Olalde Villegas',
+  shortName: 'Paola Lissette',
+  date: '11 de Abril de 2026',
   targetISO: '2026-04-17T16:00:00-06:00',
 
   iglesia: {
     nombre: 'Parroquia de Nuestra Señora de los Dolores',
-    hora: '4:00 PM',
+    hora: '5:00 PM',
     direccion: 'Plaza Principal S/N, Centro, 37800',
     ciudad: 'Dolores Hidalgo Cuna de la Independencia Nacional, Gto.',
-    mapsUrl: 'https://maps.google.com/?q=Parroquia+de+Nuestra+Señora+de+los+Dolores+Dolores+Hidalgo',
+    mapsUrl: 'https://maps.app.goo.gl/itNe8uYCF8i2ZLC4A',
   },
 
   salon: {
-    nombre: 'Recepción y Fiesta',
+    nombre: 'Salón de eventos Dos Tierras',
     hora: '6:00 PM',
     direccion: 'Carretera Dolores al Pueblito N. 280, 37806',
     ciudad: 'Dolores Hidalgo Cuna de la Independencia Nacional, Gto.',
-    mapsUrl: 'https://maps.google.com/?q=Carretera+Dolores+al+Pueblito+280+Dolores+Hidalgo',
+    mapsUrl: 'https://maps.app.goo.gl/41CPsTysvNP1BcdaA?g_st=iw',
   },
 
   padres: {
-    mama: 'Nombre de la Mamá',
-    papa: 'Nombre del Papá',
+    mama: 'Carmen Olivia Villegas Sanchez',
+    papa: 'Israel Olalde Morales',
   },
 
   padrinos: {
-    madrina: 'Nombre de la Madrina',
-    padrino: 'Nombre del Padrino',
+    madrinas: [
+      'Reyna Morales Morales',
+      'Salma Elisa Mora Rodríguez',
+    ],
+    padrinos: [
+      'David Olalde Sanchez',
+      'Luis Javier Benítez',
+    ],
   },
 
   whatsappNumber: '5214422716856',

@@ -18,33 +18,33 @@ export default function Padrinos({ active }) {
       style={{ backgroundImage: `url(${IMAGES.scrollBlank})` }}
     >
       <div className={`${s.content} ${visible ? s.contentVisible : ''}`}>
-        <p className={s.sparkle} style={{ '--i': 0 }}>
-          ✨ Mis Padrinos ✨
-        </p>
+        <h2 className={s.title} style={{ '--i': 0 }}>
+          Padrinos de Honor
+        </h2>
 
         <p className={s.quote} style={{ '--i': 1 }}>
-          "Quienes con su amor y guía iluminan mi camino"
+          "Con su bendición y apoyo, este sueño se hace realidad"
         </p>
 
-        <div className={s.divider} style={{ '--i': 2 }}>
-          <span className={s.dividerLine} />
-          <span className={s.dividerIcon}>🕊️</span>
-          <span className={s.dividerLine} />
+        <div className={s.divider} style={{ '--i': 2 }}>✦</div>
+
+        <div className={s.padrinosGrid} style={{ '--i': 3 }}>
+          {/* Madrinas */}
+          {EVENT.padrinos.madrinas.map((madrina, i) => (
+            <div key={`madrina-${i}`} className={s.padrinoItem}>
+              <span className={s.label}>Madrina</span>
+              <p className={s.name}>{madrina}</p>
+            </div>
+          ))}
+
+          {/* Padrinos */}
+          {EVENT.padrinos.padrinos.map((padrino, i) => (
+            <div key={`padrino-${i}`} className={s.padrinoItem}>
+              <span className={s.label}>Padrino</span>
+              <p className={s.name}>{padrino}</p>
+            </div>
+          ))}
         </div>
-
-        <p className={s.label} style={{ '--i': 3 }}>
-          Madrina
-        </p>
-        <p className={s.padrinoName} style={{ '--i': 4 }}>
-          {EVENT.padrinos.madrina}
-        </p>
-
-        <p className={s.label} style={{ '--i': 5 }}>
-          Padrino
-        </p>
-        <p className={s.padrinoName} style={{ '--i': 6 }}>
-          {EVENT.padrinos.padrino}
-        </p>
       </div>
     </section>
   );

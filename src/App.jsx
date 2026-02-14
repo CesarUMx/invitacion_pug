@@ -39,7 +39,7 @@ function App() {
           title="Misa Religiosa"
           hora={EVENT.iglesia.hora}
           direccion={EVENT.iglesia.direccion}
-          ciudad={EVENT.iglesia.ciudad}
+          nombre={EVENT.iglesia.nombre}
           mapsUrl={EVENT.iglesia.mapsUrl}
         />
         <LocationSection
@@ -48,7 +48,7 @@ function App() {
           title="Recepción y Fiesta"
           hora={EVENT.salon.hora}
           direccion={EVENT.salon.direccion}
-          ciudad={EVENT.salon.ciudad}
+          nombre={EVENT.salon.nombre}
           mapsUrl={EVENT.salon.mapsUrl}
         />
         <DressReveal />

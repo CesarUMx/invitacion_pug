@@ -4,11 +4,10 @@ import s from './LocationSection.module.css';
 export default function LocationSection({
   active,
   bgImage,
-  icon,
   title,
   hora,
   direccion,
-  ciudad,
+  nombre,
   mapsUrl,
 }) {
   const [visible, setVisible] = useState(false);
@@ -37,11 +36,11 @@ export default function LocationSection({
         </p>
 
         <p className={s.address} style={{ '--i': 1 }}>
-          {direccion}
+          {nombre}
         </p>
 
         <p className={s.city} style={{ '--i': 2 }}>
-          {ciudad}
+          {direccion}
         </p>
 
         <a
