@@ -21,8 +21,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(20px, 4vh, 36px);
-  padding: clamp(20px, 4vh, 40px) clamp(20px, 5vw, 40px);
+  gap: clamp(12px, 2.5vh, 20px);
+  padding: clamp(15px, 3vh, 30px) clamp(20px, 5vw, 40px);
   width: 100%;
   max-width: 600px;
 }
@@ -40,44 +40,97 @@
   transform: translateY(0);
 }
 
-/* ===== Sol wrapper ===== */
-.sunWrapper {
+/* ===== Ícono wrapper ===== */
+.iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ===== Sol ===== */
-.sun {
-  font-size: clamp(3rem, 10vw, 5rem);
-  filter: drop-shadow(0 0 20px rgba(245, 200, 66, 0.6));
-  animation: goldenShimmer 3s ease-in-out infinite, sunRotate 8s ease-in-out infinite;
+/* ===== Imagen del cofre ===== */
+.chestImage {
+  width: clamp(100px, 25vw, 160px);
+  height: auto;
+  filter: drop-shadow(0 4px 20px rgba(245, 200, 66, 0.4));
+  animation: pulse 2s ease-in-out infinite;
 }
 
-/* ===== Quote ===== */
-.quote {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(8px, 1.5vh, 12px);
+/* ===== Título ===== */
+.title {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+  color: var(--gold);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.05em;
   margin: 0;
 }
 
-.quoteText {
+/* ===== Mensaje ===== */
+.message {
   font-family: var(--font-elegant);
-  font-style: italic;
-  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
   color: var(--cream);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   line-height: 1.5;
   margin: 0;
+  max-width: 520px;
 }
 
-.quoteCite {
+/* ===== Info de Liverpool ===== */
+.liverpoolInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(4px, 0.8vh, 8px);
+}
+
+.eventName {
+  font-family: var(--font-title);
+  font-size: clamp(1.2rem, 4.5vw, 1.7rem);
+  color: var(--gold);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.eventNumber {
   font-family: var(--font-body);
-  font-style: normal;
-  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
   color: var(--purple-light);
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* ===== Botón Liverpool ===== */
+.liverpoolBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(12px, 2.5vh, 16px) clamp(28px, 7vw, 40px);
+  font-family: var(--font-title);
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  font-weight: 600;
+  color: var(--purple-deep);
+  background: linear-gradient(135deg, #f8f0dc 0%, #e8dcc0 100%);
+  border: 2px solid var(--gold-dark);
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.liverpoolBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(200, 150, 10, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: var(--gold);
+  background: linear-gradient(135deg, #fffaed 0%, #f0e6ce 100%);
+}
+
+.liverpoolBtn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 /* ===== Divider ===== */
@@ -109,38 +162,18 @@
 }
 
 /* ===== Keyframes ===== */
-@keyframes goldenShimmer {
-  0%, 100% {
-    filter: drop-shadow(0 0 20px rgba(245, 200, 66, 0.6));
-  }
-  50% {
-    filter: drop-shadow(0 0 30px rgba(245, 200, 66, 0.9));
-  }
-}
-
-@keyframes sunRotate {
-  0%, 100% {
-    transform: rotate(-5deg);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
-}
-
 @keyframes pulse {
   0%, 100% {
-    opacity: 1;
     transform: scale(1);
   }
   50% {
-    opacity: 0.7;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
 /* ===== Responsive ===== */
 @media (min-width: 768px) {
   .content {
-    gap: clamp(24px, 5vh, 44px);
+    gap: clamp(16px, 3vh, 24px);
   }
 }

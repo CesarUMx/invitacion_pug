@@ -25,11 +25,11 @@ export default function InvitationScroll({ active }) {
         </p>
 
         <p className={s.quote} style={{ '--i': 1 }}>
-          "Una nueva princesa descubre su luz"
+          "Como en un nuevo cuento de hadas mis sueños brillan hoy mas que nunca"
         </p>
 
         <h2 className={s.name} style={{ '--i': 2 }}>
-          {EVENT.quinceanera}
+          {EVENT.shortName}
         </h2>
 
         <p className={s.line} style={{ '--i': 3 }}>

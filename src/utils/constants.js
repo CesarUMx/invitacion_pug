@@ -14,7 +14,7 @@ export const EVENT = {
 
   salon: {
     nombre: 'Salón de eventos Dos Tierras',
-    hora: '6:00 PM',
+    hora: '6:30 PM',
     direccion: 'Carretera Dolores al Pueblito N. 280, 37806',
     ciudad: 'Dolores Hidalgo Cuna de la Independencia Nacional, Gto.',
     mapsUrl: 'https://maps.app.goo.gl/41CPsTysvNP1BcdaA?g_st=iw',
@@ -37,6 +37,7 @@ export const EVENT = {
   },
 
   whatsappNumber: '5214422716856',
+  liverpoolUrl: 'https://mesaderegalos.liverpool.com.mx/milistaderegalos/51942434',
 };
 
 export const IMAGES = {
@@ -47,4 +48,5 @@ export const IMAGES = {
   scrollMapSalon: '/assets/images/scroll-map1.png',
   princessDress: '/assets/images/princess-dress.jpg',
   fondo: '/assets/images/fondo.png',
+  cofre: '/assets/images/cofre.png',
 };

@@ -15,7 +15,7 @@ function generateLanterns(count) {
 }
 
 export default function FloatingLanterns() {
-  const lanterns = useMemo(() => generateLanterns(8), []);
+  const lanterns = useMemo(() => generateLanterns(10), []);
 
   return (
     <div className={s.field}>
