@@ -176,11 +176,23 @@ export default function WindowScene({ onComplete }) {
       {/* Audio de inicio */}
       <audio ref={audioRef} src={SOUNDS.intro} loop />
 
-      {/* Botón de inicio */}
+      {/* Botón de inicio - Sobre de invitación */}
       {!audioStarted && (
         <div className={s.startOverlay}>
-          <button onClick={handleStart} className={s.startButton}>
-            ✨ Iniciar Invitación ✨
+          <button onClick={handleStart} className={s.envelopeButton}>
+            <div className={s.envelopeTop}>
+              <div className={s.sealWrapper}>
+                <div className={s.waxSeal}>
+                  <span className={s.sealIcon}>👑</span>
+                </div>
+              </div>
+            </div>
+            <div className={s.envelopeBody}>
+              <p className={s.envelopeTitle}>Invitación</p>
+              <p className={s.envelopeSubtitle}>XV Años</p>
+              <p className={s.envelopeName}>Paola Lissette</p>
+              <p className={s.envelopeAction}>Toca para abrir</p>
+            </div>
           </button>
         </div>
       )}
