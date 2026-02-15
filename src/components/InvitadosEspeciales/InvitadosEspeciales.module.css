@@ -86,7 +86,7 @@
 .name {
   font-family: var(--font-title);
   font-size: clamp(1.1rem, 4vw, 1.5rem);
-  color: var(--gold-dark);
+  color: var(--purple-main);
   text-shadow: 0 1px 4px rgba(200, 150, 10, 0.2);
   letter-spacing: 0.05em;
   margin: 0;

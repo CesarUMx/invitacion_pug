@@ -233,11 +233,13 @@
 /* ===== Parte superior del sobre (decorativa) ===== */
 .envelopeTop {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 8px;
-  background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
 }
 
 /* ===== Sello de cera ===== */
@@ -262,9 +264,21 @@
   animation: sealGlow 2s ease-in-out infinite;
 }
 
-.sealIcon {
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+.florIcon {
+  width: clamp(10rem, 30vw, 120em);
+  height: clamp(10rem, 30vw, 10rem);
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  animation: florGlow 2s ease-in-out infinite;
+}
+
+@keyframes florGlow {
+  0%, 100% {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 6px 12px rgba(245, 200, 66, 0.4)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  }
 }
 
 /* ===== Cuerpo del sobre ===== */

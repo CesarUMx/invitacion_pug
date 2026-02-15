@@ -17,13 +17,11 @@ import { EVENT, IMAGES, SOUNDS } from './utils/constants';
 
 function App() {
   const [introComplete, setIntroComplete] = useState(false);
-  const [currentPage, setCurrentPage] = useState(0);
   const heroAudioRef = useRef(null);
-  const celebrationAudioRef = useRef(null);
 
   // Iniciar audio cuando el intro termine
   useEffect(() => {
-    if (introComplete && heroAudioRef.current && currentPage <= 3) {
+    if (introComplete && heroAudioRef.current) {
       const timer = setTimeout(() => {
         heroAudioRef.current.play().catch(err => {
           console.log('Hero audio play error:', err);
@@ -32,26 +30,6 @@ function App() {
       return () => clearTimeout(timer);
     }
   }, [introComplete]);
-
-  // Controlar audio basado en la página activa
-  useEffect(() => {
-    if (!heroAudioRef.current || !celebrationAudioRef.current || !introComplete) return;
-
-    // Páginas 0-3 (HeroSection, InvitationScroll, Padrinos, InvitadosEspeciales): reproducir audio hero
-    if (currentPage <= 3) {
-      heroAudioRef.current.play().catch(err => {
-        console.log('Hero audio play error:', err);
-      });
-      celebrationAudioRef.current.pause();
-    } 
-    // Página 4 (CountdownTimer) en adelante: reproducir audio celebration
-    else {
-      heroAudioRef.current.pause();
-      celebrationAudioRef.current.play().catch(err => {
-        console.log('Celebration audio play error:', err);
-      });
-    }
-  }, [currentPage, introComplete]);
 
   return (
     <>
@@ -64,18 +42,15 @@ function App() {
         <WindowScene onComplete={() => setIntroComplete(true)} />
       )}
 
-      {/* Audio de HeroSection/InvitationScroll/Padrinos */}
+      {/* Audio para todas las páginas */}
       <audio ref={heroAudioRef} src={SOUNDS.hero} loop />
-      
-      {/* Audio de CountdownTimer y páginas siguientes */}
-      <audio ref={celebrationAudioRef} src={SOUNDS.celebration} loop />
 
       {/* Contenido siempre renderizado (detrás del intro) para precargar imágenes */}
-      <PageCarousel onPageChange={setCurrentPage}>
+      <PageCarousel>
         <HeroSection introComplete={introComplete} />
         <InvitationScroll />
-        <Padrinos />
         <InvitadosEspeciales />
+        <Padrinos />
         <CountdownTimer />
         <LocationSection
           bgImage={IMAGES.scrollMap}

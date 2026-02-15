@@ -27,21 +27,21 @@ export const EVENT = {
 
   padrinos: {
     madrinas: [
-      'Reyna<br/>Morales Morales',
+      'Reyna<br/>Morales Terrazas',
       'Norma Andrea Rodriguez Sanchez',
     ],
     padrinos: [
       'David Olalde Sanchez',
-      'Macos Mora Tapia',
+      'Marcos Mora Tapia',
     ],
   },
 
   invitadosEspeciales: {
     enMiCorazon: [
       'Aurora Sanchez "Yiyo"',
-      'Dionisio Olalde "Tito Nisho"',
+      'Dionisio Olalde <br/>"Tito Nisho"',
     ],
-    deLaMano: 'Petra Morales "Tita Paty"',
+    deLaMano: 'Petra Morales <br/>"Tita Paty"',
   },
 
   whatsappNumber: '5214422716856',
@@ -58,6 +58,7 @@ export const IMAGES = {
   fondo: '/assets/images/fondo.png',
   cofre: '/assets/images/cofre.png',
   fin: '/assets/images/fin.png',
+  flor: '/assets/images/flor.png',
 };
 
 export const SOUNDS = {

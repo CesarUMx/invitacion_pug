@@ -19,7 +19,7 @@ export default function Padrinos({ active }) {
     >
       <div className={`${s.content} ${visible ? s.contentVisible : ''}`}>
         <h2 className={s.title} style={{ '--i': 0 }}>
-          Padrinos de Honor
+          Padrinos
         </h2>
 
         <p className={s.quote} style={{ '--i': 1 }}>

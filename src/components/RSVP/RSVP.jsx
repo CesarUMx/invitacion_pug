@@ -13,7 +13,7 @@ export default function RSVP({ active }) {
   }, [active, visible]);
 
   const mensaje = encodeURIComponent(
-    `Hola! Confirmo mi asistencia a los XV Años de ${EVENT.quinceañera} 👑✨\n` +
+    `Hola! Confirmo mi asistencia a los XV Años de ${EVENT.quinceañera} ✨\n` +
     `Nombre: \n` +
     `Asistentes: `
   );
@@ -27,7 +27,7 @@ export default function RSVP({ active }) {
     >
       {/* Contenido */}
       <div className={`${s.content} ${visible ? s.contentVisible : ''}`}>
-        <span className={s.crown} style={{ '--i': 0 }}>👑</span>
+        <img src={IMAGES.flor} alt="Flor" className={s.crown} style={{ '--i': 0 }} />
 
         <h2 className={s.title} style={{ '--i': 1 }}>
           ¿Nos acompañas en esta noche especial?

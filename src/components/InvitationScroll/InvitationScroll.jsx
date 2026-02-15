@@ -25,16 +25,12 @@ export default function InvitationScroll({ active }) {
         </p>
 
         <p className={s.quote} style={{ '--i': 1 }}>
-          "Como en un nuevo cuento de hadas, mis sueños brillan hoy más que nunca"
+          "Con la bendición de dios y en compañía de nuetros seres queridos, tenemos el honor de invitarle a celebrar los XV de nuestra querida"
         </p>
 
         <h2 className={s.name} style={{ '--i': 2 }}>
           {EVENT.shortName}
         </h2>
-
-        <p className={s.line} style={{ '--i': 3 }}>
-          Cumple sus Quince Años
-        </p>
 
         <p className={s.body} style={{ '--i': 4 }}>
           Con el amor y la bendición de sus papás

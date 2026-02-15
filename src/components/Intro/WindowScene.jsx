@@ -181,11 +181,7 @@ export default function WindowScene({ onComplete }) {
         <div className={s.startOverlay}>
           <button onClick={handleStart} className={s.envelopeButton}>
             <div className={s.envelopeTop}>
-              <div className={s.sealWrapper}>
-                <div className={s.waxSeal}>
-                  <span className={s.sealIcon}>👑</span>
-                </div>
-              </div>
+              <img src={IMAGES.flor} alt="Flor" className={s.florIcon} />
             </div>
             <div className={s.envelopeBody}>
               <p className={s.envelopeTitle}>Invitación</p>

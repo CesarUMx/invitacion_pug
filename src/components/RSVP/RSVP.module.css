@@ -37,9 +37,11 @@
   transform: translateY(0);
 }
 
-/* ===== Corona ===== */
+/* ===== Flor ===== */
 .crown {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  width: clamp(5rem, 20vw, 15rem);
+  height: clamp(5rem, 20vw, 15rem);
+  object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(245, 200, 66, 0.5));
   animation: crownFloat 3s ease-in-out infinite;
 }
