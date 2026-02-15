@@ -33,7 +33,7 @@ export default function Padrinos({ active }) {
           {EVENT.padrinos.madrinas.map((madrina, i) => (
             <div key={`madrina-${i}`} className={s.padrinoItem}>
               <span className={s.label}>Madrina</span>
-              <p className={s.name}>{madrina}</p>
+              <p className={s.name} dangerouslySetInnerHTML={{ __html: madrina }} />
             </div>
           ))}
 

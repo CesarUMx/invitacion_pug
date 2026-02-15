@@ -218,7 +218,7 @@ export default function WindowScene({ onComplete }) {
       {/* Título — parte superior */}
       <div className={`${s.titleGroup} ${step >= 1 ? s.titleGroupVisible : ''} ${zooming ? s.titleHide : ''}`}>
         <h1 className={s.titleXV}>XV Años</h1>
-        <p className={s.titleName}>Paola Lissette</p>
+        <p className={s.titleName}>Paola&nbsp;&nbsp;&nbsp;&nbsp;Lissette</p>
       </div>
 
       {/* Torre clickeable */}

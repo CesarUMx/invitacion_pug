@@ -27,13 +27,21 @@ export const EVENT = {
 
   padrinos: {
     madrinas: [
-      'Reyna Morales Morales',
-      'Salma Elisa Mora Rodríguez',
+      'Reyna<br/>Morales Morales',
+      'Norma Andrea Rodriguez Sanchez',
     ],
     padrinos: [
       'David Olalde Sanchez',
-      'Luis Javier Benítez',
+      'Macos Mora Tapia',
     ],
+  },
+
+  invitadosEspeciales: {
+    enMiCorazon: [
+      'Aurora Sanchez "Yiyo"',
+      'Dionisio Olalde "Tito Nisho"',
+    ],
+    deLaMano: 'Petra Morales "Tita Paty"',
   },
 
   whatsappNumber: '5214422716856',

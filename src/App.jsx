@@ -6,6 +6,7 @@ import PageCarousel from './components/PageCarousel/PageCarousel';
 import HeroSection from './components/HeroSection/HeroSection';
 import InvitationScroll from './components/InvitationScroll/InvitationScroll';
 import Padrinos from './components/Padrinos/Padrinos';
+import InvitadosEspeciales from './components/InvitadosEspeciales/InvitadosEspeciales';
 import CountdownTimer from './components/CountdownTimer/CountdownTimer';
 import LocationSection from './components/LocationSection/LocationSection';
 import DressReveal from './components/DressReveal/DressReveal';
@@ -22,7 +23,7 @@ function App() {
 
   // Iniciar audio cuando el intro termine
   useEffect(() => {
-    if (introComplete && heroAudioRef.current && currentPage <= 2) {
+    if (introComplete && heroAudioRef.current && currentPage <= 3) {
       const timer = setTimeout(() => {
         heroAudioRef.current.play().catch(err => {
           console.log('Hero audio play error:', err);
@@ -36,14 +37,14 @@ function App() {
   useEffect(() => {
     if (!heroAudioRef.current || !celebrationAudioRef.current || !introComplete) return;
 
-    // Páginas 0 (HeroSection), 1 (InvitationScroll) y 2 (Padrinos): reproducir audio hero
-    if (currentPage <= 2) {
+    // Páginas 0-3 (HeroSection, InvitationScroll, Padrinos, InvitadosEspeciales): reproducir audio hero
+    if (currentPage <= 3) {
       heroAudioRef.current.play().catch(err => {
         console.log('Hero audio play error:', err);
       });
       celebrationAudioRef.current.pause();
     } 
-    // Página 3 (CountdownTimer) en adelante: reproducir audio celebration
+    // Página 4 (CountdownTimer) en adelante: reproducir audio celebration
     else {
       heroAudioRef.current.pause();
       celebrationAudioRef.current.play().catch(err => {
@@ -74,6 +75,7 @@ function App() {
         <HeroSection introComplete={introComplete} />
         <InvitationScroll />
         <Padrinos />
+        <InvitadosEspeciales />
         <CountdownTimer />
         <LocationSection
           bgImage={IMAGES.scrollMap}
