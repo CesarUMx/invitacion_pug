@@ -28,11 +28,11 @@ export default function DressReveal({ active }) {
       <div className={`${s.content} ${visible ? s.contentVisible : ''}`}>
 
         <h2 className={s.title} style={{ '--i': 1 }}>
-          Código de Vestimenta
+          Colores Reservados
         </h2>
 
         <p className={s.subtitle} style={{ '--i': 2 }}>
-          Colores Reservados para la Quinceañera
+          para la Quinceañera
         </p>
 
         <div className={s.colorsGrid} style={{ '--i': 3 }}>
