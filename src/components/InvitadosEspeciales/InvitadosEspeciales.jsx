@@ -22,7 +22,6 @@ export default function InvitadosEspeciales({ active }) {
           Invitados Especiales
         </h2>
 
-        <div className={s.divider} style={{ '--i': 1 }}>✦</div>
 
         {/* En mi corazón me acompañan */}
         <div className={s.section1} style={{ '--i': 2 }}>
@@ -33,8 +32,6 @@ export default function InvitadosEspeciales({ active }) {
             ))}
           </div>
         </div>
-
-        <div className={s.divider} style={{ '--i': 3 }}>✦</div>
 
         {/* De la mano de */}
         <div className={s.section2} style={{ '--i': 4 }}>

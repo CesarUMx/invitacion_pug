@@ -25,7 +25,7 @@ export default function InvitationScroll({ active }) {
         </p>
 
         <p className={s.quote} style={{ '--i': 1 }}>
-          "Con la bendición de dios y en compañía de nuetros seres queridos, tenemos el honor de invitarle a celebrar los XV de nuestra querida"
+          "Con la bendición de dios y en compañía de nuestros seres queridos, tenemos el honor de invitarle a celebrar los XV de nuestra querida"
         </p>
 
         <h2 className={s.name} style={{ '--i': 2 }}>
