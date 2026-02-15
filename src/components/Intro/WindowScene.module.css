@@ -67,7 +67,7 @@
   font-family: 'Dancing Script', cursive;
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  font-size: clamp(3rem, 8vw, 5rem);
   color: var(--purple-light);
   text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   margin-top: 4px;
