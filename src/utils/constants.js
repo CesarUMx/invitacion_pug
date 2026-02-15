@@ -44,7 +44,7 @@ export const EVENT = {
     deLaMano: 'Petra Morales <br/>"Tita Paty"',
   },
 
-  whatsappNumber: '5214422716856',
+  whatsappNumber: '5214424570311',
   liverpoolUrl: 'https://mesaderegalos.liverpool.com.mx/milistaderegalos/51942434',
 };
 
