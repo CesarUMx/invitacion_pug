@@ -13,7 +13,7 @@ export default function RSVP({ active }) {
   }, [active, visible]);
 
   const mensaje = encodeURIComponent(
-    `Hola! Confirmo mi asistencia a los XV Años de ${EVENT.quinceañera} ✨\n` +
+    `Hola! Confirmo mi asistencia a los XV Años de Paola Lissette ✨\n` +
     `Nombre: \n` +
     `Asistentes: `
   );
