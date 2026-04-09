@@ -2,7 +2,7 @@ export const EVENT = {
   quinceanera: 'Paola Lissette Olalde Villegas',
   shortName: 'Paola Lissette',
   date: '11 de Abril de 2026',
-  targetISO: '2026-04-17T16:00:00-06:00',
+  targetISO: '2026-04-11T16:00:00-06:00',
 
   iglesia: {
     nombre: 'Parroquia de Nuestra Señora de los Dolores',
